@@ -33,9 +33,9 @@
 
 // ------------------ Exercícios de ESCRITA de Código ------------------------
 // //01
-// const nome = prompt('Informe seu nome')
-// const idade = prompt('Informe sua idade')
-// // RESOLUÇÃO: Se não declarar a um valor para a const irá aparecer a seguinte mensagem: Uncaught SyntaxError, esssa mensagem de erro está associado pelo fato de não ser possível uma variável "const" possuir o valor undefined.
+// let nome = prompt('Informe seu nome')
+// let idade = Number(prompt('Informe sua idade'))
+// // RESOLUÇÃO: Se não declarar a um valor para a const irá aparecer a seguinte mensagem: Uncaught SyntaxError, esssa mensagem de erro está associado pelo fato de não ser possível uma variável "const" possuir o valor undefined. Porém, se realizarmos somente com o let, ele vai retornar somente undefined.
 // console.log('Tipo de nome: ', typeof nome)
 // console.log('Tipo de idade: ', typeof idade)
 // // RESOLUÇÃO: As variáveis são do tipo STRING, isso pelo falo de estar utilizando o prompt, que sempre vai retornar como STRING, caso eu não realize a conversão do tipo de dado.
@@ -45,9 +45,9 @@
 // const question1 = 'Você curte um Accept - Aiming High?'
 // const question2 = 'E um Rainbow - Stargazer?'
 // const question3 = 'Puts, já escutou um Judas Priest - Painkiller?'
-// const answer1 = prompt(question1)
-// const answer2 = prompt(question2)
-// const answer3 = prompt(question3)
+// let answer1 = prompt(question1)
+// let answer2 = prompt(question2)
+// let answer3 = prompt(question3)
 // console.log(question1, answer1)
 // console.log(question2, answer2)
 // console.log(question3, answer3)
@@ -55,7 +55,9 @@
 // //03
 // let a = Number(prompt('Insira o valor de a'))
 // let b = Number(prompt('Insira o valor de b'))
+// let c = null
+// c = a
 // a = b
-// b = a
+// b = c
 // console.log('O novo valor de a é: ', a)
 // console.log('O novo valor de b é: ', b)
