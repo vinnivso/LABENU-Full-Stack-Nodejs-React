@@ -39,7 +39,7 @@
 // //02
 // let comidasPreferidas = ['pizza', 'panettone salgado', 'esfiha', 'cajuzinho', 'uva']
 // console.log(comidasPreferidas)
-// const fraseComidasPreferidas = `Essas são minhas comidas preferidas: 
+// let fraseComidasPreferidas = `Essas são minhas comidas preferidas: 
 // ${comidasPreferidas[0]}
 // ${comidasPreferidas[1]}
 // ${comidasPreferidas[2]}
@@ -52,9 +52,9 @@
 
 // //03
 // let listaDeTarefas = []
-// let userQuestion1 = prompt('Please insert a (1) primary task, which you have to do')
-// let userQuestion2 = prompt('Please insert a (2) secondary task, which you have to do')
-// let userQuestion3 = prompt('Please insert the (3) last task, which you have to do')
+// const userQuestion1 = prompt('Please insert a (1) primary task, which you have to do')
+// const userQuestion2 = prompt('Please insert a (2) secondary task, which you have to do')
+// const userQuestion3 = prompt('Please insert the (3) last task, which you have to do')
 // listaDeTarefas = [userQuestion1, userQuestion2, userQuestion3]
 // console.log(listaDeTarefas)
 // let taskDone = Number(prompt('Dear user, please insert the index of a previously mentioned task that has already been done (1 - 3)'))
