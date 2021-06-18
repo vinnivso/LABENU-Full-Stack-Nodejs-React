@@ -135,10 +135,9 @@ function checaAnoBissexto(ano) {
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
-  const userName = prompt('Você tem mais de 18 anos? Responda com "sim" ou "nao".') 
-  const userScholarity = prompt('Você possui ensino médio completo? Responda com "sim" ou "nao".') 
+  const userName = prompt('Você tem mais de 18 anos? Responda com "sim" ou "nao".')
+  const userScholarity = prompt('Você possui ensino médio completo? Responda com "sim" ou "nao".')
   const userAvailability = prompt('Você possui disponibilidade exclusiva durante os horários do curso? Responda com "sim" ou "nao".')
-  const checkUserInputs = userName == ('sim') && userScholarity == ('sim') && userAvailability == ('sim')
-  console.log(checkUserInputs)
-  return checkUserInputs
+  console.log(userName.includes('sim') && userScholarity.includes('sim') && userAvailability.includes('sim'))
+  return checaValidadeInscricaoLabenu 
 }
