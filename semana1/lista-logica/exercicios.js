@@ -39,9 +39,7 @@ function imprimeIdade() {
 // EXERCÍCIO 03
 function calculaIMC(peso, altura) {
   // implemente sua lógica aqui
-  const calcImc = (peso / Math.pow(altura, 2)).toFixed(1)
-  console.log(calcImc)
-  return calcImc
+  return (peso / Math.pow(altura, 2)).toFixed(1)
 }
 
 // EXERCÍCIO 04
@@ -69,41 +67,31 @@ function imprimeTresCoresFavoritas() {
 // EXERCÍCIO 06
 function retornaStringEmMaiuscula(string) {
   // implemente sua lógica aqui
-  const stringUpperCase = string.toUpperCase()
-  console.log(stringUpperCase)
-  return stringUpperCase
+  return string.toUpperCase()
 }
 
 // EXERCÍCIO 07
 function calculaIngressosEspetaculo(custo, valorIngresso) {
   // implemente sua lógica aqui
-  const ingressosNecessarios = custo / valorIngresso
-  console.log(ingressosNecessarios)
-  return ingressosNecessarios
+  return custo / valorIngresso
 }
 
 // EXERCÍCIO 08
 function checaStringsMesmoTamanho(string1, string2) {
   // implemente sua lógica aqui
-  const compareStringLength = string1.length == string2.length
-  console.log(compareStringLength)
-  return compareStringLength
+  return string1.length == string2.length
 }
 
 // EXERCÍCIO 09
 function retornaPrimeiroElemento(array) {
   // implemente sua lógica aqui
-  const userArrayFirstElement = array[0]
-  console.log(userArrayFirstElement)
-  return userArrayFirstElement
+  return array[0]
 }
 
 // EXERCÍCIO 10
 function retornaUltimoElemento(array) {
   // implemente sua lógica aqui
-  const userArrayLastElement = array[array.length - 1]
-  console.log(userArrayLastElement)
-  return userArrayLastElement
+  return array[array.length - 1]
 }
 
 // EXERCÍCIO 11
@@ -120,9 +108,7 @@ function trocaPrimeiroEUltimo(array) {
 // EXERCÍCIO 12
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
   // implemente sua lógica aqui
-  const checkIgualdade = string1.toLowerCase() == string2.toLowerCase()
-  console.log(checkIgualdade)
-  return checkIgualdade
+  return string1.toLowerCase() == string2.toLowerCase()
 }
 
 // EXERCÍCIO 13
