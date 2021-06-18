@@ -129,12 +129,7 @@ function checaRenovacaoRG() {
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
-  //const userYear = Number(prompt('Dear user, insert the actual year or any year that is passing through your mind'))
-  const checkLeap400 = ano % 400 == 0
-  const checkLeap4E100 = ano % 4 == 0 && ano % 100 != 0
-  const checkLeap = checkLeap400 || checkLeap4E100
-  console.log(checkLeap)
-  return checkLeap
+  return ano % 400 == 0 || ano % 4 == 0 && ano % 100 != 0
 }
 
 // EXERCÍCIO 15
