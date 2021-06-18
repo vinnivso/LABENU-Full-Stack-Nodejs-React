@@ -1,0 +1,163 @@
+// EXEMPLOS DE IMPLEMENTAÇÃO ---------------------------------------------------------------
+
+// EXERCÍCIO 0A
+function soma(num1, num2) {
+  // implemente sua lógica aqui
+  return num1 + num2
+}
+
+// EXERCÍCIO 0B
+function imprimeMensagem() {
+  // implemente sua lógica aqui
+  const mensagem = prompt('Digite uma mensagem!')
+
+  console.log(mensagem)
+}
+
+// EXERCÍCIOS PARA FAZER ------------------------------------------------------------------
+
+// EXERCÍCIO 01
+function calculaAreaRetangulo() {
+  // implemente sua lógica aqui
+  const altura = Number(prompt('Digite o valor da altura'))
+  const largura = Number(prompt('Digite o valor da largura'))
+  const area = altura * largura
+  console.log(area)
+  return area
+}
+
+// EXERCÍCIO 02
+function imprimeIdade() {
+  // implemente sua lógica aqui
+  const anoAtual = Number(prompt('Digite o ano atual'))
+  const anoNascimento = Number(prompt('Digite o seu ano de nascimento'))
+  const idade = anoAtual - anoNascimento
+  console.log(idade)
+  return idade
+}
+
+// EXERCÍCIO 03
+function calculaIMC(peso, altura) {
+  // implemente sua lógica aqui
+  const calcImc = (peso / Math.pow(altura, 2)).toFixed(1)
+  console.log(calcImc)
+  return calcImc
+}
+
+// EXERCÍCIO 04
+function imprimeInformacoesUsuario() {
+  // implemente sua lógica aqui
+  // "Meu nome é NOME, tenho IDADE anos, e o meu email é EMAIL."
+  const userName = prompt('Dear user, insert your name.')
+  const userAge = Number(prompt('Dear user, insert your age.'))
+  const userEmail = prompt('Dear user, insert your email adress')
+  const phrase = `Meu nome é ${userName}, tenho ${userAge} anos, e o meu email é ${userEmail}.`
+  console.log(phrase)
+}
+
+// EXERCÍCIO 05
+function imprimeTresCoresFavoritas() {
+  // implemente sua lógica aqui
+  const userColor1 = prompt('Dear user, insert your favorite color.')
+  const userColor2 = prompt('Dear user, insert your favorite color.')
+  const userColor3 = prompt('Dear user, insert your favorite color.')
+  const userColors = [userColor1, userColor2, userColor3]
+  console.log(userColors)
+  return userColors
+}
+
+// EXERCÍCIO 06
+function retornaStringEmMaiuscula(string) {
+  // implemente sua lógica aqui
+  const stringUpperCase = string.toUpperCase()
+  console.log(stringUpperCase)
+  return stringUpperCase
+}
+
+// EXERCÍCIO 07
+function calculaIngressosEspetaculo(custo, valorIngresso) {
+  // implemente sua lógica aqui
+  const ingressosNecessarios = custo / valorIngresso
+  console.log(ingressosNecessarios)
+  return ingressosNecessarios
+}
+
+// EXERCÍCIO 08
+function checaStringsMesmoTamanho(string1, string2) {
+  // implemente sua lógica aqui
+  const compareStringLength = string1.length == string2.length
+  console.log(compareStringLength)
+  return compareStringLength
+}
+
+// EXERCÍCIO 09
+function retornaPrimeiroElemento(array) {
+  // implemente sua lógica aqui
+  const userArrayFirstElement = array[0]
+  console.log(userArrayFirstElement)
+  return userArrayFirstElement
+}
+
+// EXERCÍCIO 10
+function retornaUltimoElemento(array) {
+  // implemente sua lógica aqui
+  const userArrayLastElement = array[array.length - 1]
+  console.log(userArrayLastElement)
+  return userArrayLastElement
+}
+
+// EXERCÍCIO 11
+function trocaPrimeiroEUltimo(array) {
+  // implemente sua lógica aqui
+  //Analogo ao exercicio de Operações
+  const userArray = array[0]
+  array[0] = array[array.length - 1]
+  array[array.length - 1] = userArray
+  console.log(array)
+  return array
+}
+
+// EXERCÍCIO 12
+function checaIgualdadeDesconsiderandoCase(string1, string2) {
+  // implemente sua lógica aqui
+  const checkIgualdade = string1.toLowerCase() == string2.toLowerCase()
+  console.log(checkIgualdade)
+  return checkIgualdade
+}
+
+// EXERCÍCIO 13
+function checaRenovacaoRG() {
+  // implemente sua lógica aqui
+  const anoAtual = Number(prompt('Digite o ano atual com quatro digitos'))
+  const anoNascimento = Number(prompt('Digite seu ano de nascimento'))
+  const anoCarteira = Number(prompt('Digite o ano de emissão da carteira de identidade'))
+  const idade = anoAtual - anoNascimento
+  const idadeCarteira = anoAtual - anoCarteira
+  const menorIgualVinte = idade <= 20 && idadeCarteira >= 5
+  const entreVinteECinqueta = idade <= 50 && idadeCarteira >= 10
+  const maiorCinquenta = idade > 50 && idadeCarteira >= 15
+  console.log(menorIgualVinte || entreVinteECinqueta || maiorCinquenta)
+  // Não é possível executar o return, sendo que essa função possui mais de uma saída
+}
+
+// EXERCÍCIO 14
+function checaAnoBissexto(ano) {
+  // implemente sua lógica aqui
+  //const userYear = Number(prompt('Dear user, insert the actual year or any year that is passing through your mind'))
+  const checkLeap400 = ano % 400 == 0
+  const checkLeap4E100 = ano % 4 == 0 && ano % 100 != 0
+  const checkLeap = checkLeap400 || checkLeap4E100
+  console.log(checkLeap)
+  return checkLeap
+}
+
+// EXERCÍCIO 15
+function checaValidadeInscricaoLabenu() {
+  // implemente sua lógica aqui
+  const userName = prompt('Você tem mais de 18 anos? Responda com "sim" ou "nao".') 
+  const userScholarity = prompt('Você possui ensino médio completo? Responda com "sim" ou "nao".') 
+  const userAvailability = prompt('Você possui disponibilidade exclusiva durante os horários do curso? Responda com "sim" ou "nao".')
+  const checkUserInputs = userName == ('sim') && userScholarity == ('sim') && userAvailability == ('sim')
+  console.log(checkUserInputs)
+  return checkUserInputs
+}
