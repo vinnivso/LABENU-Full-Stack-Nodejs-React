@@ -120,7 +120,7 @@ function checaRenovacaoRG() {
   const idade = anoAtual - anoNascimento
   const idadeCarteira = anoAtual - anoCarteira
   const menorIgualVinte = idade <= 20 && idadeCarteira >= 5
-  const entreVinteECinqueta = idade <= 50 && idadeCarteira >= 10
+  const entreVinteECinqueta = idade > 20 && idade <= 50 && idadeCarteira >= 10
   const maiorCinquenta = idade > 50 && idadeCarteira >= 15
   console.log(menorIgualVinte || entreVinteECinqueta || maiorCinquenta)
   // Não é possível executar o return, sendo que essa função possui mais de uma saída
