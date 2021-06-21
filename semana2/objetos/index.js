@@ -91,22 +91,21 @@
 // userPhrase(userInputTwo)
 
 // -----------------------> EXERCÍCIO 3 <--------------------------
-let carrinho = []
-const objectFruitOne = {
-    userFruit: prompt('Please insert your most favorite fruit.'),
-    disponobility: prompt('Do you have this fruit? (Answer only with "yes" or "no".)').includes('yes')
-}
-const objectFruitTwo = {
-    userFruit: prompt('Please insert your second favorite fruit.'),
-    disponobility: prompt('Do you have this fruit? (Answer only with "yes" or "no".)').includes('yes')
-}
-const objectFruitThree = {
-    userFruit: prompt('Please insert your less favorite fruit.'),
-    disponobility: prompt('Do you have this fruit? (Answer only with "yes" or "no".)').includes('yes')
-}
-function completandandoCarrinho(object) {
-    return carrinho.push(object)
-}
-completandandoCarrinho(objectFruitOne)
-completandandoCarrinho(objectFruitTwo)
-completandandoCarrinho(objectFruitThree)
+// let carrinho = []
+// const objectFruitOne = {
+//     userFruit: prompt('Please insert your most favorite fruit.'),
+//     disponobility: prompt('Do you have this fruit? (Answer only with "yes" or "no".)').includes('yes')
+// }
+// const objectFruitTwo = {
+//     userFruit: prompt('Please insert your second favorite fruit.'),
+//     disponobility: prompt('Do you have this fruit? (Answer only with "yes" or "no".)').includes('yes')
+// }
+// const objectFruitThree = {
+//     userFruit: prompt('Please insert your less favorite fruit.'),
+//     disponobility: prompt('Do you have this fruit? (Answer only with "yes" or "no".)').includes('yes')
+// }
+// function completandandoCarrinho(objectOne, objectFruitTwo, objectFruitThree) {
+//     return carrinho.push(objectOne, objectFruitTwo, objectFruitThree)
+// }
+// completandandoCarrinho(objectFruitOne, objectFruitTwo, objectFruitThree)
+// console.log(carrinho)
