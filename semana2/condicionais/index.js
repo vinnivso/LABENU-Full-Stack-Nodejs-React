@@ -118,3 +118,91 @@
 // checkVouOuNao(generoDoFilme, precoDoIngresso)
 
 // ----------------------->EXERCÍCIO 2<-----------------------------
+// const userNomeCompleto = prompt('Digite seu nome completo')
+// const userTipoDeJogo = prompt('Por favor, informe o tipo de jogo de seu interesse: "IN" para jogos Internacionais e "DO" para jogos da casa.').normalize('NFD').toUpperCase()
+// const userEtapaDoJogo = prompt('Por favor, informe a etapa do jogo de seu interesse: "SF" para jogos da semi-final, "DT" indica jogos para decisão do terceiro lugar e "FI" indica jogo da final.').normalize('NFD').toUpperCase()
+// const userCategoria = Number(prompt('Por favor, selecione a categoria de seu interesse. Lembrando que as categorias, são: 1, 2, 3 e 4.'))
+// const userQuantidadeDeIngressos = Number(prompt('Por favor, informe a quantidade de ingressos de seu interesse.'))
+
+// let precoDosIngressos
+
+// switch(userEtapaDoJogo){
+//     case 'SF':
+//         switch(userCategoria){
+//             case 1:
+//                 precoDosIngressos = 1320.00
+//                 break
+//             case 2:
+//                 precoDosIngressos = 880.00
+//                 break
+//             case 3:
+//                 precoDosIngressos = 550.00
+//                 break
+//             case 4:
+//                 precoDosIngressos = 220.00
+//                 break
+//             default:
+//                 break
+//         }
+//         break
+//     case 'DT':
+//         switch(userCategoria){
+//             case 1:
+//                 precoDosIngressos = 660.00
+//                 break
+//             case 2:
+//                 precoDosIngressos = 440.00
+//                 break
+//             case 3:
+//                 precoDosIngressos = 330.00
+//                 break
+//             case 4:
+//                 precoDosIngressos = 170.00
+//                 break
+//             default:
+//                 break
+//         }
+//         break
+//     case 'FI':
+//         switch(userCategoria){
+//             case 1:
+//                 precoDosIngressos = 1980.00
+//                 break
+//             case 2:
+//                 precoDosIngressos = 1320.00
+//                 break
+//             case 3:
+//                 precoDosIngressos = 880.00
+//                 break
+//             case 4:
+//                 precoDosIngressos = 330.00
+//                 break
+//             default:
+//                 break
+//         }
+//         break
+//     default:
+//         break
+// }
+// if(userTipoDeJogo === 'IN'){
+//     precoDosIngressos = (precoDosIngressos * 4.1)
+// }
+
+// let textoUserTipoDeJogo
+// if (userTipoDeJogo === 'DO'){
+//     textoUserTipoDeJogo = 'Doméstico'
+// }   else if (userTipoDeJogo === 'IN'){
+//     textoUserTipoDeJogo = 'Internacional'
+// }   else {
+//     textoUserTipoDeJogo = 'Não foi especificado o tipo de jogo que deseja assistir. Por favor, inserir "IN" para jogos internacionais e "DO" para jogos domésticos, jogos da casa.'
+// }
+// let recibo = `--- Dados da Compra ---
+// Nome do Cliente: ${userNomeCompleto}.
+// Tipo do Jogo: ${userTipoDeJogo}.
+// Etapa do Jogo: ${userEtapaDoJogo}.
+// Categoria: ${userCategoria}.
+
+// --- Valores ---
+// Valor do Ingresso: ${precoDosIngressos}.
+// Valor Total da Compra: ${(precoDosIngressos * userQuantidadeDeIngressos).toFixed(2)}.`
+// console.log(recibo)
