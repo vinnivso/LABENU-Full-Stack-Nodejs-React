@@ -137,8 +137,13 @@
 // }).sort()
 // console.log(nomeDePokemonsOrdenados)
 
-// const semRepetições =
+// const semRepeticoes =
 // (pokemons.map((elemento) => {return elemento.tipo})).filter((elemento, index, array) => {
 //     return array.indexOf(elemento) === index
 // })
-// console.log(semRepetições)
+// console.log(semRepeticoes)
+
+//OU PODE SER REALIZADO DA SEGUINTE FORMA:
+// const tipoDosPokemon = pokemons.map((elemento) => {return elemento.tipo})
+// const novaArraySemRepeticoes = [...new Set(tipoDosPokemon)]
+// console.log(novaArraySemRepeticoes)
