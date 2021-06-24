@@ -131,8 +131,14 @@
 //     { nome: "Vulpix", tipo: "fogo" },
 //     { nome: "Squirtle", tipo: "água" },
 //     { nome: "Psyduck", tipo: "água" },
-//  ]
-//  const nomeDePokemonsOrdenados = pokemons.map((elemento)=> {
-//      return elemento.nome
-//  }).sort()
-//  console.log(nomeDePokemonsOrdenados)
+// ]
+// const nomeDePokemonsOrdenados = pokemons.map((elemento)=> {
+//     return elemento.nome
+// }).sort()
+// console.log(nomeDePokemonsOrdenados)
+
+// const semRepetições =
+// (pokemons.map((elemento) => {return elemento.tipo})).filter((elemento, index, array) => {
+//     return array.indexOf(elemento) === index
+// })
+// console.log(semRepetições)
