@@ -89,7 +89,16 @@
 // })
 // console.log(nomeDosItens)
 
-// const itensComDesconto = produtos.map(({nome, preco}) => {
+// const itensComDesconto = produtos.map((produto) => {
+//     return {
+//         nome: produto.nome,
+//         preco: (produto.preco * .95).toFixed(2)
+//     }
+// })
+// console.log(itensComDesconto)
+
+// //OU FAZENDO A 2B DA SEGUINTE FORMA!
+// const itensComDesconto = produtos.map(({nome,preco}) => {
 //     return {
 //         nome: nome,
 //         preco: (preco * .95).toFixed(2)
@@ -114,3 +123,16 @@
 // console.log(mensagemProdutoPreco)
 
 // ----------------------->DESAFIOS<--------------------------------
+// ----------------------->EXERCÍCIO 1<-----------------------------
+// const pokemons = [
+//     { nome: "Bulbasaur", tipo: "grama" },
+//     { nome: "Bellsprout", tipo: "grama" },
+//     { nome: "Charmander", tipo: "fogo" },
+//     { nome: "Vulpix", tipo: "fogo" },
+//     { nome: "Squirtle", tipo: "água" },
+//     { nome: "Psyduck", tipo: "água" },
+//  ]
+//  const nomeDePokemonsOrdenados = pokemons.map((elemento)=> {
+//      return elemento.nome
+//  }).sort()
+//  console.log(nomeDePokemonsOrdenados)
