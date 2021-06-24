@@ -48,7 +48,7 @@
 
 // ----------------------->EXERCÍCIO 2<-----------------------------
 //A.
-const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+// const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 // for(let elemento of array) {
 //     console.log(elemento)
 // }
@@ -93,3 +93,47 @@ const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 //     }
 // }
 // console.log(menorElemento)
+
+// ------------------- DESAFIOS ------------------------------------
+// ----------------------->EXERCÍCIO 1<-----------------------------
+// console.log(`Lets go play boiiii!`)
+// const numeroParaAdivinhar = +(prompt('Digite um número que seu amigo vai ter que acertar!'))
+// let chuteDoNumero
+// let acertou = false
+// let tentativas = 0
+// while(!acertou){
+//     let chuteDoNumero = +(prompt('Digite um número cujo você acredito que foi seu amigo que digitou.'))
+//     tentativas++
+//     console.log(`O número que você chutou: ${chuteDoNumero}.`)
+//     if(chuteDoNumero === numeroParaAdivinhar){
+//         console.log(`Acertou!`)
+//         console.log(`O número de tentativas foi: ${tentativas}.`)
+//         acertou = true
+//     } else if(chuteDoNumero > numeroParaAdivinhar){
+//         console.log(`Errou! O número do chute é maior que o número escolhido pelo seu amigo!`)
+//     } else {
+//         console.log(`Errou! O número do chute é menor que o número escolhido pelo seu amigo!`)
+//     }
+// }
+
+// ----------------------->EXERCÍCIO 2<-----------------------------
+// console.log(`Lets go play boiiii!`)
+// const numeroParaAdivinhar = Math.floor(Math.random() * 100) + 1
+// console.log(numeroParaAdivinhar)
+// let chuteDoNumero
+// let acertou = false
+// let tentativas = 0
+// while(!acertou){
+//     let chuteDoNumero = +(prompt('Digite um número cujo você acredito que foi seu amigo que digitou.'))
+//     tentativas++
+//     console.log(`O número que você chutou: ${chuteDoNumero}.`)
+//     if(chuteDoNumero === numeroParaAdivinhar){
+//         console.log(`Acertou!`)
+//         console.log(`O número de tentativas foi: ${tentativas}.`)
+//         acertou = true
+//     } else if(chuteDoNumero > numeroParaAdivinhar){
+//         console.log(`Errou! O número do chute é maior que o número escolhido pelo seu amigo!`)
+//     } else {
+//         console.log(`Errou! O número do chute é menor que o número escolhido pelo seu amigo!`)
+//     }
+// }
