@@ -1,5 +1,26 @@
-.mensagem-intro {
-    font-weight: bold;
-    color: red;
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+#video-tank {
+    position:fixed;
+    z-index: -1;
+    margin: 0 auto;
+}
+@media (min-aspect-ratio: 16/9) {
+    #video-tank {
+        width:100%;
+        height:auto;
+    }
+}
+@media (max-aspect-ratio: 16/9) {
+    #video-tank {
+        width:auto;
+        height:100%;
+    }
+}
+@media (max-width: 767px) {
+    #video-tank {
+        display:none;
+    }
+    body {
+        background: url("poster.png");
+        background-size: cover;
+    }
 }
