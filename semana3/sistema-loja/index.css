@@ -1,0 +1,26 @@
+#video-tank {
+    position:fixed;
+    z-index: -1;
+    margin: 0 auto;
+}
+@media (min-aspect-ratio: 16/9) {
+    #video-tank {
+        width:100%;
+        height:auto;
+    }
+}
+@media (max-aspect-ratio: 16/9) {
+    #video-tank {
+        width:auto;
+        height:100%;
+    }
+}
+@media (max-width: 767px) {
+    #video-tank {
+        display:none;
+    }
+    body {
+        background: url("poster.png");
+        background-size: cover;
+    }
+}
