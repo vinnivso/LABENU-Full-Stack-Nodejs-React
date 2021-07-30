@@ -27,6 +27,7 @@ export default class TelaCadastro extends React.Component {
         .catch(err => {alert(err.response.data.message)})
     }
 
+
     render() {
         return (
             <div>

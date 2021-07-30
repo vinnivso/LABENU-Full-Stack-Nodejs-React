@@ -15,17 +15,22 @@ const CardUsuario = styled.div`
 export default class TelaListaUsuarios extends React.Component {
     //Criado um STATE inicial somente para armazenar minha lista de usuários, como é inicial, nesse caso é somente para apresentar um estado vazio.
     state = {usuarios:[]}
-    //Quero que carregue assim que a tela terminar de carregar, evitando que o conteúdo carregue e seja gerado ao clicar em um botão. Para isso utilizamos o componentDidMount. Sendo assim estou dizendo para essa componente, que: Ao carregar a tela, por favor seja executada a função.
+    //Quero que carregue assim que a tela terminar de carregar, evitando que o conteúdo carregue apenas ao atualizar a página e seja gerado ao clicar em um botão. Para isso utilizamos o componentDidMount. Sendo assim estou dizendo para essa componente, que: Ao carregar a tela, por favor seja executada a função.
     componentDidMount() {
         this.pegarUsuarios()
     }
     //Criando função para pegar todos os usuários, perceba que dessa vez é um GET.
-    pegarUsuarios = () => {
+    pegarUsuarios = async () => {
         const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users'
-        axios.get(url, {headers:{Authorization:'vinicius-oliveira-lovelace'}})
-        //Guardando a lista no STATE
-        .then(res=>{this.setState({usuarios: res.data})})
-        .catch(err=>{alert('Ocorreu um problema, por favor tente recarregar a página.')})
+        // axios.get(url, {headers:{Authorization:'vinicius-oliveira-lovelace'}})
+        // //Guardando a lista no STATE
+        // .then(res=>{this.setState({usuarios: res.data})})
+        // .catch(err=>{alert('Ocorreu um problema, por favor tente recarregar a página.')})
+        try{
+            const res = await axios.get(url, {headers:{Authorization:'vinicius-oliveira-lovelace'}})
+            this.setState({usuarios:res.data})
+        }
+        catch(err){alert('Ocorreu um problema, por favor tente recarregar a página.')}
     }
     //Criando função para deletar usuário, lembrando que temos id e o mesmo está sendo atrelado no map abaixo, na função listaUsuarios. Vamos passar o parâmetro ID.
     deletarUsuario = (id) => {
@@ -33,7 +38,7 @@ export default class TelaListaUsuarios extends React.Component {
         axios.delete(url, {headers:{Authorization:'vinicius-oliveira-lovelace'}})
         .then(res=>{
             alert('Usuário deletado(a) com sucesso(a)')
-            //Solicitando que carreguea a lista após eu excluir usuário.
+            //Solicitando que carregue a lista após eu excluir usuário.
             this.pegarUsuarios()
         })
         .catch(err=>{alert('ocorreu um erro, tente novamente.')
@@ -50,7 +55,7 @@ export default class TelaListaUsuarios extends React.Component {
         })
         return (
             <div>
-                <button onClick={this.props.irParaCadastro}>Ir para Cadastro</button>
+                <button onClick={this.props.irParaCadastro}>Voltar</button>
                 <h2>Lista de Usuários</h2>
                 {listaUsuarios}
             </div>
