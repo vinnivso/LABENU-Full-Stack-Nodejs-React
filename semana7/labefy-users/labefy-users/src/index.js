@@ -1,12 +1,10 @@
-import { StrictMode } from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-import Registro from "./Registro";
-
-const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <StrictMode>
-    <Registro />
-  </StrictMode>,
-  rootElement
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
