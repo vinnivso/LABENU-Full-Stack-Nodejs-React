@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import styled, {createGlobalStyle} from 'styled-components'
-import {PageHome} from './pages/PageHome'
-import {PageMatch} from './pages/PageMatch'
+import PageHome from './pages/PageHome'
+import PageMatch from './pages/PageMatch'
 //Testar depois PageHome e PageMatch com export default para evitar a criação de componentes em arquivos avulsos.
 //Não esquecer do MATERIAL-UI, assim como foi feito no template do FIGMA
 
@@ -14,34 +14,24 @@ const GlobalStyle = createGlobalStyle`
     min-height: 100%;
   }
 `
-export default function App() {
-  const [currentPage, setCurrentPage] = useState('Home')
+export default function App(){
+  const [currentPage, setCurrentPage] = useState('PageHome')
 
-  //Lembrar de criar o vínculo dessa alteração com base no "Accept" do usuário, seguindo o respectivo Match.
-  const changePage = (e) => {
-    if(e.target.innerHTML === 'Home'){
-      setCurrentPage('Home')
-    }
-    else {
-      setCurrentPage('PageMatch')
-    }
+  //Função que será utilizada para realizar a troca de tela conforme o click no botão, detalhe: Repare que os "sets" estão invertidos, ou seja, se estiver na Home quero que me retorne a página de matches e vice-versa.
+  const changePage = () => {
+    currentPage === 'PageHome'? setCurrentPage('PageMatch') : setCurrentPage('PageHome')
   }
-  //Renderização Condicional de tela.
-  const renderPage = () => {
-    if(currentPage === 'Home') {
-      return (<PageHome/>)
-    }
-    else if (currentPage === 'Match') {
-      return (<PageMatch/>)
-    }
-    else {
-      return (<div>Oxi painho, deu ruim!</div>)
-    }
+  const cleanMatch = () => {
+    //Será utilizando para limpar o campo de match na aplicação
   }
   return(
   <div>
     <GlobalStyle/>
-    {renderPage()}
+    {/* Renderização Condicional */}
+    {currentPage ==='PageHome'?<PageHome/> : <PageMatch/>}
+    <button onClick={changePage}>{currentPage === 'PageHome'? 'Ir para Matches' : 'Ir para Início'}</button>
+    {/* Inserir a função cleanMatch na linha abaixo */}
+    <button onClick={''}>Adeus as paqueras!</button>
   </div>
   )
 }
