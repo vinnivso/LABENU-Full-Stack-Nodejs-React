@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import styled, {createGlobalStyle} from 'styled-components'
-import { PageHome } from './pages/PageHome'
+import {PageHome} from './pages/PageHome'
 import {PageMatch} from './pages/PageMatch'
+//Testar depois PageHome e PageMatch com export default para evitar a criação de componentes em arquivos avulsos.
 //Não esquecer do MATERIAL-UI, assim como foi feito no template do FIGMA
 
 const GlobalStyle = createGlobalStyle`
