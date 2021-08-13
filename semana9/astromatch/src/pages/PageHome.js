@@ -39,8 +39,7 @@ export default function PageHome(){
         .catch(err => {alert(err.response.data.message)});
     }
 
-    const choosePerson = (element) => {
-        element.name === 'nein'? ():()
+    const choosePerson = (action) => {
     }
 
     //Exibição dos dados na página, em f(término de seu Load).
@@ -51,15 +50,18 @@ export default function PageHome(){
     return (
     <div>
         <PageHomeDiv>
+            {/* Ternário para avaliar se existe perfis ou não. Caso exista, ele exibe os perfis e chama as funções associadas, caso contrário, é exibido uma mensagem "No more manitos(as)." Dessa forma evito o maldito erro do null. */}
+            {profile?
             <PageHomeProfile>
                 <PageHomeImg src={profile.photo}/>
                 <h2>{profile.name}, {profile.age} anos</h2>
                 <p>{profile.bio}</p>
                 <div>
-                    <button name='nein'onClick={choosePerson}>❌</button>
-                    <button name='gut'onClick={choosePerson}>💘</button>
+                    <button onClick={()=>choosePerson(false)}>❌</button>
+                    <button onClick={()=>choosePerson(true)}>💘</button>
                 </div>
             </PageHomeProfile>
+            : <div>No more manitos(as)</div>}
         </PageHomeDiv>
     </div>
     )

@@ -17,11 +17,11 @@ const MatchImg = styled.img`
     border-radius: 30px;
     margin-right:2%;
 `
-export function Match() {
+export function Match(props) {
     return (
         <MatchDiv>
-            <MatchImg src={'https://s2.glbimg.com/7xoebpLbauWR-QHroHyZbWN3eQU=/0x0:620x413/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_cf9d035bf26b4646b105bd958f32089d/internal_photos/bs/2020/o/J/ACA4X8T9Gb5zwJ6pCZRA/2020-03-03-gemera.jpg'}/>
-            <h2>Carrito Manito</h2>
+            <MatchImg src={props.photo}/>
+            <h2>{props.name}</h2>
         </MatchDiv>
     )
 }
@@ -46,10 +46,14 @@ const PageMatchProfile = styled.div`
     }
 `
 export default function PageMatch(){
+    const [matches, setMatches] = useState([])
+
+    const getMatches = () => {
+    }
     return (
         <PageMatchDiv>
             <PageMatchProfile>
-                <Match/>
+                <Match />
             </PageMatchProfile>
         </PageMatchDiv>
     )
