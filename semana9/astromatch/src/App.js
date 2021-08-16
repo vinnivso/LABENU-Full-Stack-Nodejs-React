@@ -23,6 +23,13 @@ export default function App(){
   }
   const cleanMatch = () => {
     //Será utilizando para limpar o campo de match na aplicação
+    axios
+    .put(
+      "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/vinicius-oliveira-lovelace/clear"
+    )
+    .then((res) => {
+      alert(`As suas paqueras foram limpas com ${res.data.message}o.`);
+    });
   }
   return(
   <div>
@@ -31,7 +38,7 @@ export default function App(){
     {currentPage ==='PageHome'?<PageHome/> : <PageMatch/>}
     <button onClick={changePage}>{currentPage === 'PageHome'? 'Ir para Matches' : 'Ir para Início'}</button>
     {/* Inserir a função cleanMatch na linha abaixo */}
-    <button onClick={''}>Adeus as paqueras!</button>
+    <button onClick={cleanMatch}>Adeus as paqueras!</button>
   </div>
   )
 }

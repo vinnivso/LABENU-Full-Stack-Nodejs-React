@@ -2,15 +2,6 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
 //Não esquecer do MATERIAL-UI, assim como foi feito no template do FIGMA
-const MatchDiv = styled.div`
-    display: flex;
-    border:1px solid black;
-    align-items: center;
-    justify-content: space-between;
-    width: 40vw;
-    padding: 25px;
-    margin: 2.5%;
-`
 const MatchImg = styled.img`
     width:10vw;
     heigth:10vw;
@@ -19,10 +10,10 @@ const MatchImg = styled.img`
 `
 export function Match(props) {
     return (
-        <MatchDiv>
-            <MatchImg src={props.photo}/>
-            <h2>{props.name}</h2>
-        </MatchDiv>
+        <div>
+            <MatchImg src={props.profile.photo}/>
+            <p>{props.profile.name}</p>
+        </div>
     )
 }
 
@@ -45,15 +36,38 @@ const PageMatchProfile = styled.div`
         width: 5vw;
     }
 `
+const MatchDiv = styled.div`
+    display: flex;
+    border:1px solid black;
+    align-items: center;
+    justify-content: space-between;
+    width: 40vw;
+    padding: 25px;
+    margin: 2.5%;
+`
+
 export default function PageMatch(){
     const [matches, setMatches] = useState([])
 
+    //Função para pegar os matches que passoa fez.
     const getMatches = () => {
+        axios
+        .get(
+          "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/vinicius-oliveira-lovelace/matches"
+        )
+        .then((res) => {
+        //   console.log(res.data.matches)
+          setMatches(res.data.matches)
+        })
     }
+
+    useEffect(() =>{getMatches()},[])
     return (
         <PageMatchDiv>
             <PageMatchProfile>
-                <Match />
+                <MatchDiv>
+                    {matches.map(match => {return <Match profile={match}/>})}
+                </MatchDiv>
             </PageMatchProfile>
         </PageMatchDiv>
     )

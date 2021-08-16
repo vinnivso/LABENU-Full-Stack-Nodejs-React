@@ -36,16 +36,27 @@ export default function PageHome(){
         axios
         .get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/vinicius-oliveira-lovelace/person')
         .then(res => {setProfile(res.data.profile)})
-        .catch(err => {alert(err.response.data.message)});
+        .catch(err => {alert(err.response.data.message)})
     }
 
-    const choosePerson = (action) => {
+    //Função para escolher a pessoa, repare que o parâmetro "choice" foi definido somente para ser conivente com a API. Definido dessa maneira para evitar de deixar o código mais verboso.
+    const choosePerson = (choice) => {
+        //Criação do Body, somente para adequação com a API e para utilização de funções posteriores.
+        const body = {id: profile.id,choice: choice}
+        // NÃO ESTÁ CLARO PRA MIM, O MOTIVO DE SER COMO UNDEFINED O PARÂMETRO DA FUNÇÃO SEGUINTE, colega me explicou, mas não está muito claro ainda.
+          setProfile(undefined)
+          axios
+            .post(
+              "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/vinicius-oliveira-lovelace/choose-person",
+              body
+            )
+            .then((res) => {
+              getProfileToChoose()
+            })
     }
 
     //Exibição dos dados na página, em f(término de seu Load).
     useEffect(()=> {getProfileToChoose()}, [])
-
-
 
     return (
     <div>
@@ -61,7 +72,7 @@ export default function PageHome(){
                     <button onClick={()=>choosePerson(true)}>💘</button>
                 </div>
             </PageHomeProfile>
-            : <div>No more manitos(as)</div>}
+            : <div>Loading rápido?</div>}
         </PageHomeDiv>
     </div>
     )
