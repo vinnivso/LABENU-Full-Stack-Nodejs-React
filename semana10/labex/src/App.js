@@ -112,6 +112,7 @@ export default function App() {
   return(
     <BrowserRouter>
     <GlobalStyle/>
+    {/* O GlobalStyle criado, só pode ser definido entre BrowserRouter e o próprio Switch, em outra posição a estilização não será aplicada ou o código será quebrado. */}
       <Switch>
         <Route exact path={'/'}>
           <HomePage/>

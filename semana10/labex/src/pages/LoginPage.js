@@ -8,17 +8,17 @@ const StyledLoginPageButton = styled.div`
     width: 500px;
     margin: 10px 0;
 `
-
 export default function LoginPage() {
     const history = useHistory()
     const [form, setForm] = useState({email:'', password:''})
 
     return (
         <div>
-            <h1>Login</h1>
-            <form>
+            <h1>LOGIN</h1>
+            <form onSubmit={''}>
+            {/* Chamar função para ser realizada no submit. */}
                 <input
-                    placeholder={'E-mail'}
+                    placeholder={'Informe seu e-mail'}
                     type={'email'}
                     name={'email'}
                     value={form.email}
@@ -26,18 +26,18 @@ export default function LoginPage() {
                     required
                 />
                 <input
-                    placeholder={'Password'}
+                    placeholder={'Informe sua senha'}
                     type={'password'}
                     name={'password'}
                     value={form.password}
                     onChange={(e) => {setForm(e.target.value)}}
                     required
                 />
+                <StyledLoginPageButton>
+                    <button onClick={() => {history.goBack()}}>Voltar</button>
+                    <button type={'submit'} name={'submit'} value={'submit'}>Entrar</button>
+                </StyledLoginPageButton>
             </form>
-            <StyledLoginPageButton>
-                <button onClick={() => {history.goBack()}}>Voltar</button>
-                <button>Entrar</button>
-            </StyledLoginPageButton>
         </div>
     )
 }

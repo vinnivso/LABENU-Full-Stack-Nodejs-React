@@ -4,8 +4,8 @@ import styled from 'styled-components'
 const ErrorPageGiphy = styled.div`
     iframe{
         box-sizing: border-box;
-        width:100%;
-        height:100;
+        width:80vw;
+        heigth:100vh;
         margin-top: 80px;
     }
 `

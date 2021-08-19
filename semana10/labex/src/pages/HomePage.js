@@ -9,6 +9,7 @@ const StyledHomePageButton = styled.div`
 `
 export default function HomePage() {
     const history = useHistory()
+
     return (
         <div>
             <h1>LABEX</h1>
