@@ -36,7 +36,7 @@ export default function ApplicationFormPage() {
                     type={'text'}
                     name={'name'}
                     value={applicationForm.name}
-                    pattern={'^.{3,}$'}
+                    pattern={'^.{3,}'}
                     // Estabelecido o mínimo de caracteres com 3 dígitos para nome
                     required title='Mínimo de 3 caracteres'
                     onChange={(e)=>{setApplicationForm(e.target.value)}}
@@ -60,7 +60,7 @@ export default function ApplicationFormPage() {
                     name={'applicationText'}
                     value={applicationForm.applicationText}
                     onChange={(e)=>{setApplicationForm(e.target.value)}}
-                    pattern={'^.{30,}$'}
+                    pattern={'^.{30,}'}
                     // Estabelecido o mínimo de caracteres com 30 dígitos para o campo do texto de aplicação
                     required title='Mínimo de 30 caracteres'
                     required
@@ -72,7 +72,7 @@ export default function ApplicationFormPage() {
                     name={'profession'}
                     value={applicationForm.profession}
                     onChange={(e)=>{setApplicationForm(e.target.value)}}
-                    pattern={'^.{10,}$'}
+                    pattern={'^.{10,}'}
                     // Estabelecido o mínimo de caracteres com 30 dígitos para o campo do texto de aplicação
                     required title='Mínimo de 10 caracteres'
                     required

@@ -33,7 +33,7 @@ export default function CreateTripPage() {
                     placeholder={'Informe o nome da Trip'}
                     name={'name'}
                     type={'text'}
-                    patter={'^.{5,}$'}
+                    patter={'^.{5,}'}
                     // Estabelecido o mínimo de caracteres com 5 dígitos para nome
                     required title='Mínimo de 5 caracteres'
                     value={newTrip.name}
@@ -58,7 +58,7 @@ export default function CreateTripPage() {
                     placeholder={'Informe uma descrição'}
                     name={'description'}
                     type={'text'}
-                    pattern={'^.{30,}$'}
+                    pattern={'^.{30,}'}
                     required title={'Descrição deve conter no mínimo 30 caracteres'}
                     value={newTrip.description}
                     onChange={(e) => {setNewTrip(e.target.value)}}
