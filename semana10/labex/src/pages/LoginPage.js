@@ -1,58 +1,37 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
+import {Typography, Button, TextField} from '@material-ui/core'
 import styled from 'styled-components'
 import axios from 'axios'
 
-const StyledLoginPageButton = styled.div`
-    display: flex;
-    justify-content: space-around;
-    width: 500px;
-    margin: 10px 0;
+const StyledLoginPageForm = styled.form`
+    display:grid;
+    // Comportamento padrão é crescimento em row.
+    gap:20px;
 `
+
 export default function LoginPage() {
+    const [form, setForm] = useState({email: '', password: ''})
     const history = useHistory()
-    const [form, setForm] = useState({email:'', password:''})
-    //Criação do hook para manipulação do form, repare que estou usando as propriedades como objeto, além de estabelecer um padrão para ficar parecido com API.
-    const submit = (e) => {
+    const onSubmitLogin = (e) => {
         e.preventDefault()
-        setForm({name:'', password:''})
+        const body = {
+            email: form.email,
+            password: form.password
+        }
+        axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/vinicius-oliveira-lovelace/login', body)
+        .then(res => {window.localStorage.setItem('token', res.data.token)})
+        // É muito bom colocar o window.localStorage para evitar alguns bugs no React, além disso foi utilizada a função setItem do localStorage, que recebe o parâmetro e guarda o mesmo.No caso, será guardado o token.
+        history.push('/list-trips')
     }
-    return (
+    return(
         <div>
-            <h1>LOGIN</h1>
-            <form onSubmit={submit}>
-            {/* Ao submeter, será executada a seguinte função. */}
-                <input
-                    placeholder={'Informe seu e-mail'}
-                    name={'email'}
-                    //O name precisa ser exatamente igual com a declaração realizada no state, assim como a declaração no state é igual o da API.
-                    type={'email'}
-                    value={form.email}
-                    onChange={(e) => {setForm({...form, [e.target.name]:e.target.value})}}
-                    //Bem parecido com a sintaxe de desestruturação de objeto. Estou realizando uma cópia do estado anterior do form e passando o valor que deve ser assumido em um respectivo campo, com base na propriedade 'name', do próprio INPUT, FORM.
-                    // onChange={(e) => { const {name, value} = e.target.value; setForm({...form,[name]:value})}}
-                    // //Poderia ser reescrito dessa maneira, caso fosse aplicado o conceito de desestruturação de objeto.Tal desestruturação encontra-se comentada acima atra´ves da declaração de variável 'const {name,value}'.Repare em um detalhe adicional, Para que a função corresponde, é necessário você inserir ';', logo após a declaração da variável.
-                    required
-                    // Estabelecido como campo requerido para submit.
-                />
-                <input
-                    placeholder={'Informe sua senha'}
-                    name={'password'}
-                    //O name precisa ser exatamente igual com a declaração realizada no state, assim como a declaração no state é igual o da API.
-                    type={'password'}
-                    value={form.password}
-                    onChange={(e) => {setForm({...form, [e.target.name]:e.target.value})}}
-                    //Bem parecido com a sintaxe de desestruturação de objeto. Estou realizando uma cópia do estado anterior do form e passando o valor que deve ser assumido em um respectivo campo, com base na propriedade 'name', do próprio INPUT, FORM.
-                    // onChange={(e) => { const {name, value} = e.target.value; setForm({...form,[name]:value})}}
-                    // //Poderia ser reescrito dessa maneira, caso fosse aplicado o conceito de desestruturação de objeto.Tal desestruturação encontra-se comentada acima atra´ves da declaração de variável 'const {name,value}'.Repare em um detalhe adicional, Para que a função corresponde, é necessário você inserir ';', logo após a declaração da variável.
-                    required
-                    // Estabelecido como campo requerido para submit.
-                />
-                <StyledLoginPageButton>
-                    <button onClick={() => {history.goBack()}}>Voltar</button>
-                    <button type={'submit'} name={'submit'}>Entrar</button>
-                </StyledLoginPageButton>
-            </form>
+            <Typography variant="h2" align={'center'} gutterBottom>Start to Login</Typography>
+            <StyledLoginPageForm onSubmit={onSubmitLogin}>
+                <TextField helperText={'Please insert your e-mail'}label={'Email'} type={'email'} name={'email'}value={form.email}onChange={(e) => setForm({...form, [e.target.name]:e.target.value})}/>
+                <TextField helperText={'Please insert your password'}label={'Password'} type={'password'} name={'password'}value={form.password}onChange={(e) => setForm({...form, [e.target.name]:e.target.value})}/>
+                <Button variant={'contained'} color={'primary'} type={'submit'}>Submit</Button>
+            </StyledLoginPageForm>
         </div>
     )
 }

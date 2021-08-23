@@ -1,31 +1,43 @@
-import React from 'react'
-import {useHistory} from 'react-router-dom'
+import React,{useState, useEffect} from 'react'
+import {Typography, Button, List, ListItem, ListItemText} from '@material-ui/core'
+import {Link} from 'react-router-dom'
+import axios from 'axios'
 import styled from 'styled-components'
 
 const StyledListTripsPage = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display:flex;
+    flex-direction:column;
     align-items: center;
-    width: 500px;
 `
-const StyledListTripsPageButton= styled.div`
-    display: flex;
-    justify-content: space-around;
-    width: 300px;
-    margin: 50px 0 10px 0;
+const StyledListTripsPageButton = styled.div`
+    display:grid;
+    grid-auto-flow:column;
+    // Comportamento padrão é crescimento em row.
+    gap:20px;
 `
 
 export default function ListTripsPage() {
-    const history = useHistory()
-
-    return (
+    const [trips, setTrips] = useState([])
+    useEffect(()=> {
+        axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labeX/vinicius-oliveira-lovelace/trips')
+        .then(res => {setTrips(res.data.trips)})
+    },[])
+    return(
         <StyledListTripsPage>
+            <Typography variant="h2" align={'center'} gutterBottom>Available Trips</Typography>
             <StyledListTripsPageButton>
-                <button onClick={() =>{history.goBack()}}>Voltar</button>
-                <button onClick={() =>{history.push('/application-form')}}>Inscreva-se</button>
+                <Link to={'/admin-create-trip'}>
+                    <Button variant={'outlined'} color={'primary'}>Create a Trip</Button>
+                </Link>
             </StyledListTripsPageButton>
-            <h1>Lista de Viagens</h1>
+            <List component={'nav'}>
+                {trips && trips.map(element => {return <Link to={'/admin-trip-details'}>
+                        <ListItem button>
+                            <ListItemText info={element} primary={element.name}/>
+                        </ListItem>
+                    </Link>
+                })}
+            </List>
         </StyledListTripsPage>
     )
 }
