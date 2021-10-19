@@ -1,8 +1,5 @@
 import * as jwt from "jsonwebtoken"
-
-interface AuthenticationData {
-  id:string
-}
+import AuthenticationData from "../types"
 
 const expiresIn = "1min"
 export default function generateToken(input:AuthenticationData):string{

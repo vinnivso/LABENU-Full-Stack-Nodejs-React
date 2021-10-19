@@ -1,6 +1,9 @@
-import express, {Express} from "express"
+import express, {Express, Request, Response} from "express"
 import cors from "cors"
 import { AddressInfo } from "net"
+import generateId from "./services/GenerateId"
+import createUser from "./endpoints/createUser"
+import generateToken from "./services/GenerateToken"
 
 const app: Express = express()
 
@@ -15,4 +18,5 @@ const server = app.listen(process.env.PORT || 3303, () => {
     console.error(`Failure upon starting server.`)
   }
 })
+
 export default app
