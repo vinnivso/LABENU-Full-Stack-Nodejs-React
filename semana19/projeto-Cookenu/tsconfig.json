@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+  "target": "es2017",
+  "module": "commonjs",
+  "esModuleInterop":true,
+  "forceConsistentCasingInFileNames":true,
+  "strict":false,
+  "skipLibCheck":true,
+  "typeRoots":["./src/@types", "node_modules/@types"] /* Estou pegando tudo que for @types em src, assim como todos os @types em node_modules, estou fazendo isso para que o type de user_id, seja reconhecido no Express.*/
+  }
+ }
