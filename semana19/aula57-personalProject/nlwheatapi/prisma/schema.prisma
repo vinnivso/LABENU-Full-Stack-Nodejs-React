@@ -1,0 +1,33 @@
+// Utilizando o SQlite para aplicação, porém não é uma boa práticar utilizar o mesmo para produção.
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+//Caso deseja colocar parâmetro opcional, basta colocar como: name  String?
+model User {
+  id String @id @default(uuid())
+  name String
+  github_id Int
+  avatar_url String
+  login String
+
+  @@map("users")
+  messages Message[]
+}
+
+model Message {
+   id String @id @default(uuid())
+   text String
+   created_at DateTime @default(now())
+
+   user User @relation(fields:[user_id], references: [id])
+
+   @@map("messages")
+   user_id String
+}
