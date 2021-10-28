@@ -1,14 +1,14 @@
+//Importação do Express e setup do mesmo, para que o server responda as Requisições
 import express from 'express'
-import http from 'http'
 import cors from 'cors'
-import dotenv from 'dotenv'
 
-dotenv.config()
 const app = express()
-app.use(cors())
+
 app.use(express.json())
+app.use(cors())
 
-//Setando que o servidor vai rodar em http, ao invés de app.
-const serverHttp = http.createServer(app) //Rodando o servidor em http, ao invés de app.
+app.listen(3003, () => {
+  console.log(`Server is running on port 3003`)
+})
 
-export {serverHttp}
+export default app
