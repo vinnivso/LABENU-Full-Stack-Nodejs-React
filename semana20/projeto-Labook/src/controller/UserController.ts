@@ -1,32 +1,17 @@
 //Se tem req e res = Controller
 import express from 'express'
+import { SignupInputDTO } from '../entities/User'
 
 export default class UserController {
   async signup(req: express.Request, res: express.Response) {
     try {
       let message = "Success!"
       const { name, email, password } = req.body
-
-      if (!name || !email || !password) {
-         res.statusCode = 406
-         message = '"name", "email" and "password" must be provided'
-         throw new Error(message)
+      const input :SignupInputDTO = {
+         name: req.body.name,
+         email: req.body.Email,
+         password: req.body.password
       }
-
-      const id: string = generateId()
-
-      const cypherPassword = await hash(password);
-
-      await connection('labook_users')
-         .insert({
-            id,
-            name,
-            email,
-            password: cypherPassword
-         })
-
-      const token: string = generateToken({ id })
-
       res.status(201).send({ message, token })
 
    } catch (error:any) {
