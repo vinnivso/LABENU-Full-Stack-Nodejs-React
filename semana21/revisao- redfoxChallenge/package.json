@@ -6,7 +6,7 @@
   "scripts": {
     "start": "clear && tsc && node ./build/index.js",
     "dev": "clear && tsnd --ignore-watch node_modules --transpile-only --exit-child src/index.ts",
-    "migrations": "tsc && node ./src/migrations/index.ts"
+    "migrations": "tsnd ./src/migrations/index.ts"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",
@@ -27,7 +27,6 @@
     "jsonwebtoken": "^8.5.1",
     "knex": "^0.95.11",
     "mysql": "^2.18.1",
-    "uuid": "^8.3.2",
-    "xlsx": "^0.17.3"
+    "uuid": "^8.3.2"
   }
 }
