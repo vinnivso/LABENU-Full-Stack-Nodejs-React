@@ -1,12 +1,36 @@
 export default class Pokemon {
-  //Como estou definindo a id como opcional, logo ele precisa ser o último
-  constructor(private name: string, private type1: string, private id?: string) {}
-  //Função que retorna id.
-  public getId = (): string | undefined => this.id;
+  constructor(
+    id: number,
+    Row_Value: string,
+    Name: string,
+    Pokedex_Number: string,
+    Img_name: string,
+    Generation: string,
+    Evolution_Stage: string,
+    Evolved: string,
+    FamilyID: string,
+    Cross_Gen: string,
+    Type1: string,
+    Type2: string,
+    Weather1: string,
+    Weather2: string,
+    STAT_TOTAL: string,
+    ATK: string,
+    DEF: string,
+    STA: string,
+    Legendary: string,
+    Aquireable: string,
+    Spawns: string,
+    Regional: string,
+    Raidable: string,
+    Hatchable: string,
+    Shiny: string,
+    Nest: string,
+    New: string,
+    NotGettable: string,
+    Future_Evolve: string,
+    CP40: string,
+    CP39: string
+  ) {}
 
-  //Função que retorna name.
-  public getName = (): string => this.name;
-
-  //Função que retorna tags.
-  public getType1 = (): string => this.type1;
 }
